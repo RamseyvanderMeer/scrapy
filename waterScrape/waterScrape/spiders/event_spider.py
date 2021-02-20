@@ -11,10 +11,7 @@ class eventsSpider(scrapy.Spider):
 
     def parse(self, response):
         events = {}
-        event = {
-            "date" : "",
-            "description" : ""
-        }
+        
         for post in response.css('div.mec-topsec'):
             #yield {
                 #'title': post.css('a.mec-color-hover::text').get(),
@@ -22,7 +19,8 @@ class eventsSpider(scrapy.Spider):
                 #'date': post.css('span.mec-start-date-label::text').get(),
                 #'description': post.css('div.mec-event-description::text').get()
             #}
-            event.update({"date" : post.css('span.mec-start-date-label::text').get(), "description" : post.css('div.mec-event-description::text').get()})
+            event = {}
+            event.update({"date" : post.css('span.mec-start-date-label::text').get(), "description" : post.css('div.mec-event-description::text').get(), "place" : post.css('div.mec-venue-details address span::text').get()})
             events[post.css('a.mec-color-hover::text').get().encode("ascii", "ignore").decode()] = event
             with open('result.json', 'w') as fp:
                 json.dump(events, fp)
