@@ -23,6 +23,6 @@ class eventsSpider(scrapy.Spider):
                 #'description': post.css('div.mec-event-description::text').get()
             #}
             event.update({"date" : post.css('span.mec-start-date-label::text').get(), "description" : post.css('div.mec-event-description::text').get()})
-            events[post.css('a.mec-color-hover::text').get()] = event
+            events[post.css('a.mec-color-hover::text').get().encode("ascii", "ignore").decode()] = event
             with open('result.json', 'w') as fp:
                 json.dump(events, fp)
