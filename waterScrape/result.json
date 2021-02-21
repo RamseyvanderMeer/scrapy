@@ -2,56 +2,67 @@
     "Buller Festival 2021": {
         "date": "05 - 07 Mar",
         "description": "Buller Festival 2021 sees New Zealand's premier whitewater kayak and ",
-        "place": "Murchison, New Zealand"
+        "place": "Murchison, New Zealand",
+        "url": "https://www.internationalrafting.com/events/buller-festival-2021/"
     },
     "Dracula Race Euro Cup 2021 ": {
         "date": "16 - 18 Apr",
         "description": "R4 IRF Euro Cup - Dracula Race, Nehoiu, Romania  You can ",
-        "place": "DNDN 10, Nr. 22 127444 Valea Lupului Romania"
+        "place": "DNDN 10, Nr. 22 127444 Valea Lupului Romania",
+        "url": "https://www.internationalrafting.com/events/draculacup2020-2/"
     },
     "Russian Northern Region Championship 2021": {
         "date": "14 - 16 May",
         "description": "Championship of the Russian Northern Region  R4 & R6  Open Men, Open ",
-        "place": null
+        "place": null,
+        "url": "https://www.internationalrafting.com/events/russia-2021-northern-championship/"
     },
     "Russian Championship 2021": {
         "date": "09 - 13 Jun",
         "description": "Russian Championship 2021  R4 & R6  Open Men, Open Women  \u00a0  Contact for registration ",
-        "place": "Adygea Republic, Russia"
+        "place": "Adygea Republic, Russia",
+        "url": "https://www.internationalrafting.com/events/russian-championship-2021/"
     },
     "Banja Luka Pre Worlds, WC, EC 2021 ": {
         "date": "11 - 13 Jun",
         "description": "IRF Pre Worlds R6, World Cup and Euro Cup 2021 ",
-        "place": "Rafting Klub Kanjon, Banja Luka, Bosnia & Herzegovina"
+        "place": "Rafting Klub Kanjon, Banja Luka, Bosnia & Herzegovina",
+        "url": "https://www.internationalrafting.com/events/banja-luka-ec-wc-%f0%9f%87%a7%f0%9f%87%a6/"
     },
     "Coaching / Training week, 2021": {
         "date": "28 Jun",
         "description": "Coaching / Training week. Seven days, for R4 and R6 ",
-        "place": "France"
+        "place": "France",
+        "url": "https://www.internationalrafting.com/events/coaching-training-week-2021/"
     },
     "IRF World Rafting Champs 2021": {
         "date": "15 - 21 Aug",
         "description": "IRF World Rafting Championships 2021 - Ziyuan, China ",
-        "place": "Ziyuan, GuangXi Province, China"
+        "place": "Ziyuan, GuangXi Province, China",
+        "url": "https://www.internationalrafting.com/events/irfwrc2021/"
     },
     "Cup of Russia 2021": {
         "date": "26 - 31 Aug",
         "description": "Cup of Russia 2021  R4 & R6  Open Men, Open Women  \u00a0  Contact for ",
-        "place": "Altay Republic, Russia"
+        "place": "Altay Republic, Russia",
+        "url": "https://www.internationalrafting.com/events/cup-of-russia-2021/"
     },
     "All Russia Rafting Cup 2021": {
         "date": "16 - 19 Sep",
         "description": "All Russia Rafting Cup  R4 & R6  Open Men, Open Women  Contact for ",
-        "place": null
+        "place": null,
+        "url": "https://www.internationalrafting.com/events/all-russia-rafting-cup-2021/"
     },
     "IRF World Rafting Champs 2022 ": {
         "date": "29 May",
         "description": "IRF World Rafting Championships 2022 - R6 - Banja Luka, ",
-        "place": "Rafting Klub Kanjon, Banja Luka, Bosnia & Herzegovina"
+        "place": "Rafting Klub Kanjon, Banja Luka, Bosnia & Herzegovina",
+        "url": "https://www.internationalrafting.com/events/irfwrc2022/"
     },
     "The Great Karnali Quest 2022 ": {
         "date": "22 - 27 Nov",
         "description": "The Great Karnali Quest is the downriver raft race in ",
-        "place": "Rakam Karnali 21600, Nepal"
+        "place": "Rakam Karnali 21600, Nepal",
+        "url": "https://www.internationalrafting.com/events/greatkarnaliquest2022/"
     }
 }
