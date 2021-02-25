@@ -1,0 +1,13 @@
+# Scrapers
+Scrapy==2.1.0
+requests==2.23.0
+
+# Parsers
+beautifulsoup4==4.9.1
+
+# Database stuff
+pymongo==3.10.1
+
+# Others
+pytz==2020.1
+pycountry==20.7.3

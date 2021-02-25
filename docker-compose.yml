@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+   # database instance
+   mongo:
+     hostname: mongo
+     container_name: mongo
+     image: mongo:4.2.8
+     restart: always
+     ports:
+       - '27017:27017'
+#     env_file:
+#       - .env
+
+  # admin interface for mongo
+   mongo-express:
+     image: mongo-express:0.54.0
+     hostname: mongo-express
+     container_name: mongo_express
+     restart: always
+     ports:
+       - '8081:8081'
+#     env_file:
+#       - .env
+     depends_on:
+       - mongo
+
+  # Python machine for all of our requirements (just to keep it clean)
+   scraper:
+     build: .
+     hostname: scraper
+     container_name: scraper
+     depends_on:
+       - mongo
+       - mongo-express
