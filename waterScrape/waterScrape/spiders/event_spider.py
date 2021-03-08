@@ -37,20 +37,23 @@ class EventsSpider(scrapy.Spider):
             self.logger.info('Parse function called on %s', response.url)
             
             ISODate_Start = post.css("span.mec-start-date-label::text").get()
-            self.logger.info(ISODate_Start)
             if ISODate_Start[3] == '-':
                 ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[8:]])
                 self.logger.info(ISODate_Start)
             else:
                 ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[3:6]])
-            #if len(ISODate_Start) >= 7:
-             #   if ISODate_Start[7] == '-':
-            #        ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[3:6]])
-            
             ISODate_Start = datetime.strptime(ISODate_Start, '%d %m')
             ISODate_Start.isoformat()
+
+            ISODate_End = post.css("span.mec-end-date-label::text").get()
+            if ISODate_End:
+                ISODate_End = ISODate_End[3:5] + ' ' + str(month_cal[ISODate_End[6:9]])
+                ISODate_End = datetime.strptime(ISODate_End, '%d %m')
+                ISODate_End.isoformat()
+
             item = WaterscrapeItem(
-                date=ISODate_Start,
+                dateStart=ISODate_Start,
+                dateEnd=ISODate_End,
                 description=(
                     post.css("div.mec-event-description::text")
                     .get()

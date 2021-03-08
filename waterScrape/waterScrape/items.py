@@ -12,4 +12,5 @@ class WaterscrapeItem(scrapy.Item):
     url = scrapy.Field()
     description = scrapy.Field()
     place = scrapy.Field()
-    date = scrapy.Field()
+    dateStart = scrapy.Field()
+    dateEnd = scrapy.Field()

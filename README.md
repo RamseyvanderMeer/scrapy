@@ -10,7 +10,7 @@ scrapy crawl event
 
 ##### Todo:
 - [ ] Secondary parse to get full description
-- [ ] Date parsing to ISO-8601
+- [-] Date parsing to ISO-8601
 - [ ] Allow auth to .env variables for DB pipeline
 - [ ] Finalize incremental update logic
 - [ ] tests
