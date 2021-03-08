@@ -1,7 +1,8 @@
 import scrapy
 from ..items import WaterscrapeItem
 from ..mongo_provider import MongoProvider
-
+from datetime import datetime
+import calendar
 
 class EventsSpider(scrapy.Spider):
     name = "eventSpider"
@@ -29,16 +30,27 @@ class EventsSpider(scrapy.Spider):
 
     def parse(self, response):
 
+        month_cal = dict((v,k) for v,k in zip(calendar.month_abbr[1:], range(1, 13)))
+        self.logger.info(month_cal)
+
         for post in response.css("div.mec-topsec"):
-            # self.logger.info('Parse function called on %s', response.url)
-            # yield {
-            #'title': post.css('a.mec-color-hover::text').get(),
-            #'title': post.css('div.mec-event-content h3.mec-event-title a.mec-color-hover::text').get()
-            #'date': post.css('span.mec-start-date-label::text').get(),
-            #'description': post.css('div.mec-event-description::text').get()
-            # }
+            self.logger.info('Parse function called on %s', response.url)
+            
+            ISODate_Start = post.css("span.mec-start-date-label::text").get()
+            self.logger.info(ISODate_Start)
+            if ISODate_Start[3] == '-':
+                ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[8:]])
+                self.logger.info(ISODate_Start)
+            else:
+                ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[3:6]])
+            #if len(ISODate_Start) >= 7:
+             #   if ISODate_Start[7] == '-':
+            #        ISODate_Start = ISODate_Start[:2] + ' ' + str(month_cal[ISODate_Start[3:6]])
+            
+            ISODate_Start = datetime.strptime(ISODate_Start, '%d %m')
+            ISODate_Start.isoformat()
             item = WaterscrapeItem(
-                date=post.css("span.mec-start-date-label::text").get(),
+                date=ISODate_Start,
                 description=(
                     post.css("div.mec-event-description::text")
                     .get()
